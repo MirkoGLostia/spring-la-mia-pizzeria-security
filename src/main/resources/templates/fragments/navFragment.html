@@ -9,10 +9,10 @@
                 <li class="nav-item">
                     <a class="nav-link"  th:classAppend="${area == 'pizza-list' ? 'active' : ''}" th:href="@{/pizza}">pizza list</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" sec:authorize="hasAuthority('admin')">
                     <a class="nav-link"  th:classAppend="${area == 'pizza-create' ? 'active' : ''}" th:href="@{/pizza/create}">create a pizza</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
                     <a class="nav-link"  th:classAppend="${area == 'ingredient' ? 'active' : ''}" th:href="@{/ingredient}">ingredients</a>
                 </li>
             </ul>

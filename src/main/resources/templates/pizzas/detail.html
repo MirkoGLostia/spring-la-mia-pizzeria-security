@@ -29,7 +29,7 @@
 <section class="container" th:object="${pizza}">
 
     <h2>Offers
-        <a th:href="@{/offer/create(pizzaId=*{id})}">add</a>
+        <a th:href="@{/offer/create(pizzaId=*{id})}" sec:authorize="hasAuthority('admin')">add</a>
     </h2>
 
     <div th:if="${message !=null}" class="alert alert-success alert-dismissible fade show">
@@ -42,9 +42,9 @@
     <ul class="list-group" th:if="*{offers.size() > 0}">
         <li class="list-group-item d-flex justify-content-between align-items-center" th:each="offer : *{offers}" th:object="${offer}">
             <span th:text="*{title}"></span>
-            <a class="btn btn-primary my-2" th:href="@{/offer/edit/{id}(id=*{id})}">modify</a>
+            <a class="btn btn-primary my-2" th:href="@{/offer/edit/{id}(id=*{id})}" sec:authorize="hasAuthority('admin')">modify</a>
             <form class="d-inline" method="POST" th:action="@{/offer/delete/{id}(id=${offer.getId()})}" onsubmit="return confirm('Are you sure?')">
-                <button type="submit" class="btn btn-primary"> delete </button>
+                <button type="submit" class="btn btn-primary" sec:authorize="hasAuthority('admin')"> delete </button>
             </form>
         </li>
     </ul>

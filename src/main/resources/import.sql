@@ -40,8 +40,8 @@ INSERT INTO pizzas_ingredients (pizzas_id, ingredients_id) VALUES(4, 3);
 
 -- user --
 
-INSERT INTO users (id, email, first_name, last_name, password) VALUES(1, 'pippo@mail.com', 'pippo', 'doggies', 'pippo');
-INSERT INTO users (id, email, first_name, last_name, password) VALUES(2, 'paperino@mail.com', 'paperino', 'paperis', 'paperino');
+INSERT INTO users (id, email, first_name, last_name, password) VALUES(1, 'pippo@mail.com', 'pippo', 'doggies', '{noop}pippo');
+INSERT INTO users (id, email, first_name, last_name, password) VALUES(2, 'paperino@mail.com', 'paperino', 'paperis', '{noop}paperino');
 
 
 -- role --

@@ -30,9 +30,8 @@
         <span>[['prezzo: ' + ${pizza.getPrice()} + ' €']]</span>
         <div class="button-list-container">
             <a class="btn btn-primary" th:href="@{/pizza/detail/{id}(id=${pizza.getId()})}"> details </a>
-            <a class="btn btn-primary" th:href="@{/pizza/edit/{id}(id=${pizza.getId()})}"> modify </a>
-            <form method="POST" th:action="@{/pizza/delete/{id}(id=${pizza.getId()})}"
-                  onsubmit="return confirm('Are you sure?')">
+            <a class="btn btn-primary" th:href="@{/pizza/edit/{id}(id=${pizza.getId()})}" sec:authorize="hasAuthority('admin')"> modify </a>
+            <form method="POST" th:action="@{/pizza/delete/{id}(id=${pizza.getId()})}" onsubmit="return confirm('Are you sure?')" sec:authorize="hasAuthority('admin')">
                 <button type="submit" class="btn btn-primary"> delete </button>
             </form>
         </div>
