@@ -35,3 +35,22 @@ INSERT INTO pizzas_ingredients (pizzas_id, ingredients_id) VALUES(3, 1);
 INSERT INTO pizzas_ingredients (pizzas_id, ingredients_id) VALUES(3, 5);
 INSERT INTO pizzas_ingredients (pizzas_id, ingredients_id) VALUES(4, 2);
 INSERT INTO pizzas_ingredients (pizzas_id, ingredients_id) VALUES(4, 3);
+
+
+
+-- user --
+
+INSERT INTO users (id, email, first_name, last_name, password) VALUES(1, 'pippo@mail.com', 'pippo', 'doggies', 'pippo');
+INSERT INTO users (id, email, first_name, last_name, password) VALUES(2, 'paperino@mail.com', 'paperino', 'paperis', 'paperino');
+
+
+-- role --
+
+INSERT INTO roles (id, name) VALUES(1, 'user');
+INSERT INTO roles (id, name) VALUES(2, 'admin');
+
+-- role_user --
+
+INSERT INTO users_roles (user_id, roles_id) VALUES(1, 1);
+INSERT INTO users_roles (user_id, roles_id) VALUES(2, 1);
+INSERT INTO users_roles (user_id, roles_id) VALUES(2, 2);
